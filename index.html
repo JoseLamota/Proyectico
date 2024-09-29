@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>BOXCINEMAS</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      input[type="text"] {
+        width: 200px;
+        height: 30px;
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      button {
+        width: 100px;
+        height: 30px;
+        padding: 10px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: #fff;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="mainForm">
+      <h3>BOXCINEMAS</h3>
+      <table id="mainForm_tabla">
+        <tr>
+          <th>Nombre</th>
+          <th>Personas</th>
+          <th>Dia</th>
+          <th>PrecioEntrada</th>
+        </tr>
+      </table>
+      <h5>cantidad de dinero en caja: $.<span id="mainForm_lblIngresoTotal">?</span></h5>
+      <h5>Familia que pago mas: <span id="mainForm_lblMenorNumPasajeros">?</span></h5>
+      <h5>Promedio pagado los dias lunes: $<span id="mainForm_lblPorcInternacionales">?</span></h5>
+      <h5>Total de dinero al final de la jornada: $<span id="mainForm_lblTotalFinal">?</span></h5>
+      <button id="mainForm_btAgregar">Agregar entrada</button>
+    </section>
+
+    <section id="EntradaForm">
+      <h3>Datos de la entrada</h3>
+      <input type="text" id="EntradaForm_inNombre" placeholder="Nombre"></input>
+      <input type="text" id="EntradaForm_inPersonas" placeholder="Personas"></input>
+      <input type="text" id="EntradaForm_inDia"  placeholder="Dia"></input>
+      <input type="text" id="EntradaForm_inPrecioEntrada" placeholder="PrecioEntrada"></input>
+      <button id="vueloForm_btAceptar">Aceptar</button> 
+    </section>
+  </body>
+  <script type="module">
+    import Cl_controlador from "./js/Cl_controlador.js";
+    new Cl_controlador()
+ </script>
