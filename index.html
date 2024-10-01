@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>BOXCINEMAS</title>
-    <link rel="stylesheet" href="styles.css" />
     <style>
+      * {
+        zoom: 1; /* Aumentar tamaño un 10% */
+      }
       input[type="text"] {
         width: 200px;
         height: 30px;
         padding: 10px;
         margin: 10px;
-        border: 1px solid #ccc;
+        border: 1px solid black;
         border-radius: 5px;
         box-sizing: border-box;
       }
@@ -21,14 +23,46 @@
         height: 30px;
         padding: 10px;
         margin: 10px;
-        border: none;
+        border: 1px solid black;
         border-radius: 5px;
-        background-color: #4CAF50;
-        color: #fff;
+        background-color: #ccc;
         cursor: pointer;
       }
-      button:hover {
-        background-color: #3e8e41;
+      #mainForm {
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      #EntradaForm {
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        text-align: center;
+      }
+      #mainForm_btAgregar {
+        width: 120px;
+        height: 40px;
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: #ccc;
+        cursor: pointer;
+      }
+      /* Estilos para la tabla */
+      #mainForm_tabla {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+      }
+      #mainForm_tabla th, #mainForm_tabla td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
       }
     </style>
   </head>
@@ -40,7 +74,7 @@
           <th>Nombre</th>
           <th>Personas</th>
           <th>Dia</th>
-          <th>PrecioEntrada</th>
+          <th>Precio Entrada</th>
         </tr>
       </table>
       <h5>cantidad de dinero en caja: $.<span id="mainForm_lblIngresoTotal">?</span></h5>
@@ -55,11 +89,8 @@
       <input type="text" id="EntradaForm_inNombre" placeholder="Nombre"></input>
       <input type="text" id="EntradaForm_inPersonas" placeholder="Personas"></input>
       <input type="text" id="EntradaForm_inDia"  placeholder="Dia"></input>
-      <input type="text" id="EntradaForm_inPrecioEntrada" placeholder="PrecioEntrada"></input>
+      <input type="text" id="EntradaForm_inPrecioEntrada" placeholder="Precio Entrada"></input>
       <button id="vueloForm_btAceptar">Aceptar</button> 
     </section>
   </body>
-  <script type="module">
-    import Cl_controlador from "./js/Cl_controlador.js";
-    new Cl_controlador()
- </script>
+</html>
