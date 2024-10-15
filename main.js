@@ -1,14 +1,21 @@
-import { Familia } from './Familia.js';
-import { Cine } from './Cine.js';
-import { VistaCine } from './VistaCine.js';
+/*BOXCINEMAS
+La entrada para el cine es de $3. Se conoce la información de varias familias 
+que fueron a ver películas, y se desea calcular el precio a pagar por cada una.
+También se sabe que los días lunes el precio de cada entrada se reduce a la 
+mitad. Cines Unidos reporta la cantidad de dinero inicial que tiene en caja,
+y requiere el procesamiento de la siguiente información: precio a pagar
+por cada familia, familia que pagó más, promedio pagado los días lunes y 
+total de dinero que le queda al final de la jornada. Para leer el día: 
+1=lunes, 2=martes, etc.
+DATOS DE PRUEBA
+Cantidad de dinero en caja: $100
 
-let contenedor = document.getElementById('resultados');
+Familia Personas Día Monto a pagar
+López       4     2     $12.00
+Gil         3     1     $4.50
+Gómez       5     5     $15.00
+Mata        2     1     $3.00
 
-let cine = new Cine(100); // Caja inicial de $100
-cine.agregarFamilia(new Familia('López', 4, 2)); 
-cine.agregarFamilia(new Familia('Gil', 3, 1));
-cine.agregarFamilia(new Familia('Gómez', 5, 5));
-cine.agregarFamilia(new Familia('Mata', 2, 1));
-
-let vista = new VistaCine(contenedor);
-vista.mostrarResultados(cine);
+Familia que pagó más: Gómez
+Promedio pagado los días lunes: $3.75
+Total de dinero al final de la jornada: $134.50*/
