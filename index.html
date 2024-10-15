@@ -5,92 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>BOXCINEMAS</title>
+    <link rel="stylesheet" href="styles.css" />
     <style>
-      * {
-        zoom: 1; /* Aumentar tamaño un 10% */
-      }
       input[type="text"] {
         width: 200px;
         height: 30px;
         padding: 10px;
         margin: 10px;
-        border: 1px solid black;
+        border: 1px solid #ccc;
         border-radius: 5px;
         box-sizing: border-box;
       }
       button {
-        width: 100px;
+        width: 120px;
         height: 30px;
         padding: 10px;
         margin: 10px;
-        border: 1px solid black;
+        border: none;
         border-radius: 5px;
-        background-color: #ccc;
+        background-color: #d4d6d4;
+        color: black;
         cursor: pointer;
       }
-      #mainForm {
-        padding: 20px;
-        border: 1px solid black;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
+      button:hover {
+        background-color: #babdba;
       }
-      #EntradaForm {
-        padding: 20px;
-        border: 1px solid black;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-top: 20px;
-        text-align: center;
+      table {
+      width: 20%;
+      border: solid 1px ;
       }
-      #mainForm_btAgregar {
-        width: 120px;
-        height: 40px;
-        padding: 10px;
-        margin: 10px;
-        border: 1px solid black;
-        border-radius: 5px;
-        background-color: #ccc;
-        cursor: pointer;
+      th, td {
+        border: 1px solid;
       }
-      /* Estilos para la tabla */
-      #mainForm_tabla {
-        width: 80%;
-        margin: 20px auto;
-        border-collapse: collapse;
+      section[id="mainForm"] {
+        border: 1px solid;
       }
-      #mainForm_tabla th, #mainForm_tabla td {
-        border: 1px solid black;
-        padding: 10px;
-        text-align: center;
+      section[id="ClienteForm"]{
+        border: 1px solid;
       }
+
     </style>
   </head>
-  <body>
+  <br>
     <section id="mainForm">
       <h3>BOXCINEMAS</h3>
       <table id="mainForm_tabla">
         <tr>
-          <th>Nombre</th>
+          <th>Familia</th>
           <th>Personas</th>
           <th>Dia</th>
-          <th>Precio Entrada</th>
+          <th>Montoapagar</th>
         </tr>
       </table>
-      <h5>cantidad de dinero en caja: $.<span id="mainForm_lblIngresoTotal">?</span></h5>
-      <h5>Familia que pago mas: <span id="mainForm_lblMenorNumPasajeros">?</span></h5>
-      <h5>Promedio pagado los dias lunes: $<span id="mainForm_lblPorcInternacionales">?</span></h5>
-      <h5>Total de dinero al final de la jornada: $<span id="mainForm_lblTotalFinal">?</span></h5>
-      <button id="mainForm_btAgregar">Agregar entrada</button>
-    </section>
+      <h5>cantidad de dinero en caja: $.<span id="mainForm_lblDineroinicial">?</span></h5>
+      <h5>Familia que pago mas: <span id="mainForm_lblFamiliaquepagomas">?</span></h5>
+      <h5>Promedio pagado los dias lunes: $<span id="mainForm_lblPrompagodiaslunes">?</span></h5>
+      <h5>Total de dinero al final de la jornada: $<span id="mainForm_lblTotalfinal">?</span></h5>
+      <button id="mainForm_btAgregar">Agregar Cliente</button>
+    </section><br>
 
-    <section id="EntradaForm">
-      <h3>Datos de la entrada</h3>
-      <input type="text" id="EntradaForm_inNombre" placeholder="Nombre"></input>
-      <input type="text" id="EntradaForm_inPersonas" placeholder="Personas"></input>
-      <input type="text" id="EntradaForm_inDia"  placeholder="Dia"></input>
-      <input type="text" id="EntradaForm_inPrecioEntrada" placeholder="Precio Entrada"></input>
-      <button id="vueloForm_btAceptar">Aceptar</button> 
+    <section id="ClienteForm">
+      <h3>Datos Cliente</h3>
+      <input type="text" id="ClienteForm_inFamilia" placeholder="Familia"></input>
+      <input type="text" id="ClienteForm_inPersonas" placeholder="Personas"></input>
+      <input type="text" id="ClienteForm_inDia"  placeholder="Dia"></input>
+      <button id="ClienteForm_btAceptar">Aceptar</button> 
     </section>
   </body>
-</html>
+  <script type="module">
+    import Cl_controlador from "./js/controlador.js";
+    new Cl_controlador()
+ </script>
