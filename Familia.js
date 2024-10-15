@@ -1,16 +1,29 @@
-export class Familia {
-    constructor(nombre, personas, dia) {
-      this.nombre = nombre;
-      this.personas = personas;
-      this.dia = dia;
-      this.precioEntrada = 3; // Precio base de la entrada
+export default class Cl_mCliente {
+    constructor ({familia, personas, dia, precioEntrada}){
+        this.familia = familia;
+        this.personas = personas;
+        this.dia = dia;
+        this.precioEntrada = precioEntrada || 3; // Agregué un valor predeterminado para precioEntrada
     }
-  
-    calcularTotal() {
-      let total = this.personas * this.precioEntrada;
-      if (this.dia === 1) { // Si es lunes, se aplica descuento del 50%
-        total /= 2;
-      }
-      return total;
+
+    set personas (p) {
+        this._personas = +p;
     }
+    get personas () {
+        return this._personas;
+    }
+    set dia (d) {
+        this._dia = +d;
+    }
+    get dia () {
+        return this._dia;
+    }
+    montoapagar() {
+        let precio = this.precioEntrada;
+        if (this.dia === 1) { // Agregué la lógica para reducir el precio los días lunes
+            precio /= 2;
+        }
+        return precio * this.personas;
+    }
+}
   }
